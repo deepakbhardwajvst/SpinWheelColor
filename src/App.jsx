@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import SpinWheel from "./components/SpinWheel";
 
 function App() {
@@ -37,8 +38,22 @@ function App() {
     "#FFD700", // Gold
   ];
 
+  const colorMeanings = {
+    Red: "Passion, Love, Anger",
+    Yellow: "Happiness, Energy, Cowardice",
+    Purple: "Royalty, Luxury, Ambition",
+    Blue: "Calmness, Stability, Trust",
+    Green: "Nature, Growth, Health",
+    Orange: "Creativity, Enthusiasm, Determination",
+    Pink: "Romance, Femininity, Compassion",
+    Gold: "Wealth, Success, Prestige",
+  };
+
+  const [winnerMeaning, setWinnerMeaning] = useState("");
+
   const onFinished = (winner) => {
     console.log(winner);
+    setWinnerMeaning(colorMeanings[winner]);
   };
 
   return (
@@ -51,6 +66,7 @@ function App() {
         upDuration={300}
         downDuration={600}
       />
+      {winnerMeaning && <p>Meaning of the color: {winnerMeaning}</p>}
     </div>
   );
 }
