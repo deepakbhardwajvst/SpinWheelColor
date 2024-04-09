@@ -1,9 +1,5 @@
-import React from 'react'
+import SpinWheel from "./components/SpinWheel.jsx";
 
 export default function App() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div></div>;
 }
